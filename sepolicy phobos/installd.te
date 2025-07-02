@@ -1,0 +1,2 @@
+allow installd fuse:file r_file_perms;
+allow installd fuse:dir r_dir_perms;

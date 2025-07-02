@@ -1,0 +1,14 @@
+# Comentado para evitar duplicação
+# type su, domain;
+# type su_exec, exec_type, file_type;
+# type su_tmpfs, file_type;
+
+allow su self:process { fork sigchld };
+allow su su_exec:file { execute getattr };
+
+allow shell su:process transition;
+allow adbd su:process dyntransition;
+allow zygote su:process dyntransition;
+allow runas su:process dyntransition;
+allow dumpstate su:process transition;
+

@@ -1,0 +1,6 @@
+type vendor_init, domain;
+init_daemon_domain(vendor_init)
+
+# Shell domain
+init_daemon_domain(shell)
+r_dir_file(domain, sysfs_bus_usb)

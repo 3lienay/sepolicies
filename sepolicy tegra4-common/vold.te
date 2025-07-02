@@ -1,0 +1,4 @@
+allow vold unlabeled:filesystem { getattr mount remount unmount };
+allow vold unlabeled:dir mounton;
+allow vold sdcard_internal:file { create getattr unlink write read open };
+allow vold sdcard_external:file { create getattr unlink write read open };

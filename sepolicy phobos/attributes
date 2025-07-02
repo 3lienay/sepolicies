@@ -1,0 +1,4 @@
+attribute recovery_exec_type;
+attribute recovery_file_type;
+attribute recovery_property_type;
+attribute recovery_socket;

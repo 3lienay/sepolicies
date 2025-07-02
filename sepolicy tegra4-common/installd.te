@@ -1,0 +1,4 @@
+allow installd platform_app_data_file:file rename;
+allow installd apk_data_file:lnk_file read;
+allow installd sdcard_internal:dir search;
+allow installd sdcard_internal:file getattr;
