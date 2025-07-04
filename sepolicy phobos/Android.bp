@@ -1,4 +1,0 @@
-sepolicy {
-    name: "device_hp_phobos_sepolicy",
-    srcs: ["*.te"],
-}

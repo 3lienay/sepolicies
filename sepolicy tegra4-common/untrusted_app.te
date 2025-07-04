@@ -1,4 +1,0 @@
-allow untrusted_app apk_data_file:dir getattr;
-allow untrusted_app cache_file:file open;
-#allow untrusted_app video_device:chr_file { read write open ioctl };
-allow untrusted_app phsd_socket:sock_file { write };

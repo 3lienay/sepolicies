@@ -1,0 +1,6 @@
+allow usb_configfs_init configfs:dir { create search write add_name remove_name };
+allow usb_configfs_init configfs:file { create open read write unlink };
+allow usb_configfs_init functionfs:dir { create search write add_name remove_name };
+allow usb_configfs_init functionfs:file { create open read write unlink };
+allow usb_configfs_init sysfs:file write;
+allow usb_configfs_init self:capability { net_admin sys_admin };

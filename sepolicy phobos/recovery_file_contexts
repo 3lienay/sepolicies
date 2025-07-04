@@ -1,5 +1,0 @@
-# Custom recovery file contexts
-/sbin/recovery u:object_r:recovery_exec_type:s0
-/tmp/.* u:object_r:recovery_file_type:s0
-/persist/bluetooth/.* u:object_r:bluetooth_persist_file:s0
-/vendor/bin/.* u:object_r:vendor_exec:s0

@@ -1,0 +1,54 @@
+# LineageOS 15.1 seapp_contexts
+
+# System server runs as system user and in system_server domain
+isSystemServer=true domain=system_server
+
+# Fixed user assignments
+user=system domain=system_app type=system_app_data_file
+user=bluetooth domain=bluetooth type=bluetooth_data_file
+user=nfc domain=nfc type=nfc_data_file
+user=radio domain=radio type=radio_data_file
+user=shared_relro domain=shared_relro
+user=shell domain=shell type=shell_data_file
+user=_isolated domain=isolated_app
+
+# Platform-signed apps
+user=_app seinfo=platform domain=platform_app type=app_data_file
+
+# Regular apps
+user=_app domain=untrusted_app type=app_data_file
+
+# Theme engine (LineageOS specific)
+user=theme_man domain=system_app type=theme_data_file
+
+# LineageOS Updater (privileged system app)
+user=_app seinfo=platform name=org.lineageos.updater domain=system_app type=system_app_data_file
+
+# Trusted system components
+user=media domain=mediaprovider type=media_data_file
+user=wifi domain=wifi type=wifi_data_file
+user=vpn domain=vpn type=vpn_data_file
+user=keystore domain=keystore type=keystore_data_file
+user=audioserver domain=audioserver type=audio_data_file
+user=cameraserver domain=cameraserver type=camera_data_file
+user=drmserver domain=drmserver type=drm_data_file
+user=mediacodec domain=mediacodec type=media_data_file
+user=mediadrm domain=mediadrm type=media_data_file
+user=mediaex player domain=mediaextractor type=media_data_file
+user=mediaserver domain=mediaserver type=media_data_file
+user=installd domain=installd type=install_data_file
+user=netd domain=netd type=net_data_file
+user=sdcardd domain=sdcardd type=sdcard_data_file
+user=u eventd domain=ueventd type=ueventd_data_file
+user=webserver domain=webserver type=web_data_file
+
+# New in Android 8.1/Oreo
+user=stats domain=stats type=stats_data_file
+user=incident domain=incident type=incident_data_file
+user=iot domain=iot type=iot_data_file
+user=com android.ims domain=ims type=ims_data_file
+
+# Vendor-specific components
+user=vendor domain=vendor type=vendor_data_file
+user=vendor_radio domain=vendor_radio type=radio_data_file
+user=vendor_qti domain=vendor_qti type=vendor_data_file

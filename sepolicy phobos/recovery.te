@@ -1,7 +1,0 @@
-# Recovery domain definition
-#type recovery, domain;
-typeattribute recovery mlstrustedsubject;
-typeattribute recovery coredomain;
-
-# Connect to our custom attributes
-typeattribute recovery recovery_exec_type;

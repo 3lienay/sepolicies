@@ -1,9 +1,0 @@
-# Permissões para o update_mac.sh
-allow init persist_file:dir search;
-allow init persist_file:file { open read getattr };
-allow init vendor_firmware_file:dir { search write add_name };
-allow init vendor_firmware_file:file { create write setattr unlink };
-allow init vendor_exec:file execute;
-type_transition init vendor_exec:process vendor_init;
-allow init bluetooth_persist_file:file { open read getattr };
-type_transition init shell_exec:process phobos_shell;

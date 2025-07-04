@@ -1,0 +1,36 @@
+# device/hp/phobos/sepolicy/private/phobos.te
+
+# ==================================================
+# Herdar políticas base do LineageOS (ESSENCIAL)
+# ==================================================
+# Isso trará todas as definições básicas (domain, init, system_app, etc)
+inherit(`lineage_common')
+
+# ==================================================
+# Definições específicas do dispositivo
+# ==================================================
+type phobos, domain;
+type phobos_exec, exec_type, vendor_file_type, file_type;
+
+# Transição de domínio (usando função do LineageOS)
+init_daemon_domain(phobos)
+
+# ==================================================
+# Permissões específicas (apenas para seu dispositivo)
+# ==================================================
+allow phobos persist_file:file r_file_perms;
+allow phobos vendor_firmware_file:file { create write setattr };
+# ... (suas regras específicas aqui)
+
+# ==================================================
+# Extensões para serviços do LineageOS
+# ==================================================
+# Exemplo: Extender permissões para o serviço de Bluetooth
+allow bluetooth phobos_device:dir { search };
+allow bluetooth tegra_device:chr_file { read };
+
+# ==================================================
+# Declarações de tipos específicos
+# ==================================================
+type tegra_device, dev_type;
+type phobos_persist_file, file_type, data_file_type;

@@ -1,8 +1,0 @@
-type traced, domain;
-type traced_exec, exec_type, file_type;
-
-init_daemon_domain(traced)
-
-allow traced self:capability { sys_admin };
-#allow traced debugfs:file rw_file_perms;
-allow traced kernel:system syslog_read;

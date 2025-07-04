@@ -1,9 +1,0 @@
-# Custom shell domain for our device
-type phobos_shell, domain;
-init_daemon_domain(phobos_shell)
-
-# Add necessary permissions for your shell domain
-allow phobos_shell persist_file:file { read open getattr };
-allow phobos_shell vendor_firmware_file:dir { search write add_name };
-allow phobos_shell vendor_firmware_file:file { create write setattr unlink };
-allow phobos_shell bluetooth_persist_file:file { read open getattr };
