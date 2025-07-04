@@ -1,0 +1,11 @@
+#!/system/bin/sh
+#added by link2sd
+LOG=/data/link2sd-debuggerd.log
+echo "$(date) mounting..." > $LOG
+sleep 2
+mount -t ext4 -o rw,noatime /dev/block/mmcblk1p2 /data/sdext2 1>>$LOG 2>>$LOG
+mount -t ext4 -o rw,noatime /dev/block/vold/179:50 /data/sdext2 1>>$LOG 2>>$LOG
+mount >> $LOG
+chmod 773 /data/dalvik-cache
+echo debuggerd.bin launched >> $LOG
+exec /system/bin/debuggerd.bin "$@"

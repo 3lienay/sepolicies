@@ -1,7 +1,0 @@
-type trace_helper, domain;
-type trace_helper_exec, exec_type, file_type;
-
-init_daemon_domain(trace_helper)
-
-allow trace_helper traced:fd use;
-allow trace_helper debugfs:file rw_file_perms;

@@ -1,0 +1,10 @@
+#!/system/bin/sh
+if [ -f /system/etc/recovery-transform.sh ]; then
+  exec sh /system/etc/recovery-transform.sh 8589312 94dd830a63d9d6cac757853d8241b9850bbda1ea 6416384 c556cb6b3b70eed160892dd38dc24c2374059240
+fi
+
+if ! applypatch -c EMMC:/dev/block/platform/sdhci-tegra.3/by-name/SOS:8589312:94dd830a63d9d6cac757853d8241b9850bbda1ea; then
+  applypatch -b /system/etc/recovery-resource.dat EMMC:/dev/block/platform/sdhci-tegra.3/by-name/LNX:6416384:c556cb6b3b70eed160892dd38dc24c2374059240 EMMC:/dev/block/platform/sdhci-tegra.3/by-name/SOS 94dd830a63d9d6cac757853d8241b9850bbda1ea 8589312 c556cb6b3b70eed160892dd38dc24c2374059240:/system/recovery-from-boot.p && log -t recovery "Installing new recovery image: succeeded" || log -t recovery "Installing new recovery image: failed"
+else
+  log -t recovery "Recovery image already installed"
+fi
